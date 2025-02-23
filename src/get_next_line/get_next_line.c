@@ -9,7 +9,7 @@
 /*   Updated: 2024/11/15 16:05:34 by vmesa-ke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "get_next_line.h"
+#include "../../inc/libft.h"
 
 char	*read_fd(int fd, char *saved)
 {
@@ -22,7 +22,7 @@ char	*read_fd(int fd, char *saved)
 		saved = "";
 	}
 	b_read = 1;
-	while (!ft_strchr(saved, '\n') && b_read != 0)
+	while (!strchr(saved, '\n') && b_read != 0)
 	{
 		readed = (char *)malloc(BUFFER_SIZE + 1);
 		b_read = read(fd, readed, BUFFER_SIZE);
@@ -33,7 +33,7 @@ char	*read_fd(int fd, char *saved)
 			return (NULL);
 		}
 		readed[b_read] = '\0';
-		saved = ft_strjoin(saved, readed);
+		saved = strjoin(saved, readed);
 		free(readed);
 	}
 	return (saved);
@@ -46,7 +46,7 @@ char	*get_next_line(int fd)
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	if (!saved[fd] || !ft_strchr(saved[fd], '\n'))
+	if (!saved[fd] || !strchr(saved[fd], '\n'))
 		saved[fd] = read_fd(fd, saved[fd]);
 	if (saved[fd] == NULL)
 		return (NULL);

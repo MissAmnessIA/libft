@@ -9,7 +9,7 @@
 /*   Updated: 2024/10/23 19:26:36 by vmesa-ke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "ft_printf.h"
+#include "../../inc/libft.h"
 
 int	type(char c, va_list args, int bytes)
 {

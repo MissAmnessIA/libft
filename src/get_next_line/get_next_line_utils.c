@@ -9,9 +9,9 @@
 /*   Updated: 2024/11/15 16:05:50 by vmesa-ke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "get_next_line.h"
+#include "../../inc/libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*strchr(const char *s, int c)
 {
 	while (*s != '\0')
 	{
@@ -50,7 +50,7 @@ char	*lost_chars(char	*saved)
 	return (new_save);
 }
 
-char	*ft_strjoin(char *save, char *readed)
+char	*strjoin(char *save, char *readed)
 {
 	char	*joined;
 	int		i;
@@ -104,7 +104,7 @@ char	*cut_line(char	*saved)
 	return (line);
 }
 
-int	ft_strlen(char *str)
+int	str_len(char *str)
 {
 	int	i;
 

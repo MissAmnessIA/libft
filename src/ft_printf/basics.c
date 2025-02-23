@@ -9,7 +9,7 @@
 /*   Updated: 2024/10/25 17:15:53 by vmesa-ke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "ft_printf.h"
+#include "../../inc/libft.h"
 
 int	putstr(char *str, int bytes)
 {

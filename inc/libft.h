@@ -12,12 +12,21 @@
 #include <stddef.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include <unistd.h>
+#include <stdarg.h>
+
+# include <fcntl.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 100000000
+# endif
 
 typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }					t_list;
+
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
@@ -61,3 +70,24 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+//get_next_line
+
+char	*get_next_line(int fd);
+char	*read_fd(int fd, char *saved);
+char	*cut_line(char	*saved);
+char	*lost_chars(char *saved);
+int		str_len(char *str);
+char	*strjoin(char *save, char *readed);
+char	*strchr(const char *s, int c);
+
+//ft_printf
+int	ptrcheck(unsigned long long ptr, int bytes);
+int	type(char c, va_list args, int bytes);
+int	putstr(char *str, int bytes);
+int	putchr(int c, int bytes);
+int	put_ptr_hex(unsigned long long ptr, int bytes);
+int	ft_putnbr(int n, int bytes);
+int	unsignedint(unsigned int n, int bytes);
+int	print_hex(unsigned int n, int bytes, char c);
+int	ft_printf(char const *str, ...);
