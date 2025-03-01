@@ -72,7 +72,6 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 //get_next_line
-
 char	*get_next_line(int fd);
 char	*read_fd(int fd, char *saved);
 char	*cut_line(char	*saved);
